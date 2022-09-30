@@ -1,16 +1,8 @@
 "use strict";
-var StatusCode;
-(function (StatusCode) {
-    StatusCode[StatusCode["SUCCESS"] = 1] = "SUCCESS";
-    StatusCode["IN_PROCESS"] = "p";
-    StatusCode["FIELD"] = "f";
-})(StatusCode || (StatusCode = {}));
-const res = {
-    message: 'Pay Done',
-    statusCode: StatusCode.SUCCESS
-};
-if (res.statusCode === StatusCode.SUCCESS) {
+function logId(id) {
+    console.log(id);
 }
-const res2 = 1 /* Roles.ADMIN */;
+logId(1);
+logId('2');
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE

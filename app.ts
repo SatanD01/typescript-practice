@@ -1,25 +1,44 @@
-enum StatusCode {
-    SUCCESS = 1,
-    IN_PROCESS = 'p',
-    FIELD = 'f'
+function logId(id: string | number | boolean) {
+    if (typeof id === 'string') {
+        console.log(id)
+    } else if (typeof id === "number"){
+        console.log(id)
+    } else  {
+        console.log(id)
+    }
+}
+// Union типы - это когда в передаются типы через | и передается типы переменных которые могут поступать.
+// Обычно используем Union когда фильтруем приходящие данные по типу
+
+
+function logError(err: string | string[]) {
+    if (Array.isArray(err)){
+        console.log(err)
+    }else  {
+        console.log(err)
+    }
 }
 
-const res = {
-    message: 'Pay Done',
-    statusCode: StatusCode.SUCCESS
+
+function logObject(obj: {a: number} | {b: number}) {
+    if ('a' in obj) {
+        console.log(obj.a)
+    } else  {
+        console.log(obj.b)
+    }
 }
 
+// Фильтрация Union обектов
 
-if (res.statusCode === StatusCode.SUCCESS) {
 
+function logMultiple(a: string | number, b: string | boolean){
+    if (a === b ) {
+        console.log(a.toLowerCase)
+    } else  {
+        console.log(a)
+    }
 }
 
-const enum Roles {
-    ADMIN = 1,
-    USER = 2
-}
-
-const res2 = Roles.ADMIN;
 
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE
