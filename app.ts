@@ -1,17 +1,19 @@
-function getFullName(firstName: string, lastName: string) {
-    // if (typeof firstName !== "string") {
-    //     throw new Error('!!!!');
-    // //   Если из вне приходят даные то надо использовать такую проверку на типы в другиз случаях не обязательно использовать проверку на типы
-    // }
-
-    return `${firstName} ${lastName}`
+function getFullName(userEntity: {firstName:string, lastName: string, age: number}): string {
+    return `${userEntity.firstName} ${userEntity.lastName} ${userEntity.age}`
 }
 
-const getFullNameArrow = (firstName: string, lastName: string) => {
-    return `${firstName} ${lastName}`
-}
+const user = {
+    firstName: 'Anton',
+    lastName: 'Johan',
+    city: 'Moscow',
+    age: 33,
+    skills: {
+        dev: true,
+        devOps: true,
+    }
+};
 
 
-console.log(getFullName('Anton', 'Johan'));
+console.log(getFullName(user));
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE
