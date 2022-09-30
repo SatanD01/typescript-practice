@@ -1,10 +1,16 @@
 "use strict";
-const skill = [1, 'Dev'];
-// Есил стоит readonly то мы не можем изменять тот или иной массив skill[0] = 2; так как мы можем только читать этот массив
-// Если не стоит readonly то мы сможем изменить массив вне зависимости константа она или нет
-const skills = ['Dev', 'DevOps'];
-// Это альтернативная запись для определения массива строк
-const skillsReadonly = ['Dev', 'DevOps'];
-// Это альтернативная запись для определения массива строк с типом readonly
+var StatusCode;
+(function (StatusCode) {
+    StatusCode[StatusCode["SUCCESS"] = 1] = "SUCCESS";
+    StatusCode["IN_PROCESS"] = "p";
+    StatusCode["FIELD"] = "f";
+})(StatusCode || (StatusCode = {}));
+const res = {
+    message: 'Pay Done',
+    statusCode: StatusCode.SUCCESS
+};
+if (res.statusCode === StatusCode.SUCCESS) {
+}
+const res2 = 1 /* Roles.ADMIN */;
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE
