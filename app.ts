@@ -1,16 +1,11 @@
-const skill: [number, string] = [1, 'Dev'];
-// Использование Tuples тоесть ограниценный массив в нем может хранится только указанное
-// Количество массив типов тоесть [number, string] = [1, 'Dev']
+const skill: readonly [number, string] = [1, 'Dev'];
+// Есил стоит readonly то мы не можем изменять тот или иной массив skill[0] = 2; так как мы можем только читать этот массив
+// Если не стоит readonly то мы сможем изменить массив вне зависимости константа она или нет
 
-const [id, skillName] = skill;
-
-// const id = skill[0];
-// const skillName = skill[1];
-
-skill.push('test');
-// Даже если мы через push добавим элемент в массив мы не сможем кнему обратиться skill[2]
-
-const arr: [number, string, ...boolean[]] = [1, 'test', false, false, true];
+const skills: Array<string> = ['Dev', 'DevOps'];
+// Это альтернативная запись для определения массива строк
+const skillsReadonly: ReadonlyArray<string> = ['Dev', 'DevOps'];
+// Это альтернативная запись для определения массива строк с типом readonly
 
 
 //tsc - Компиляция ТС на JS

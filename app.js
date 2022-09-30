@@ -1,10 +1,10 @@
 "use strict";
-const skills = ['Dev', 'DevOps', 'Testing'];
-// Когда мы передаем перенной массив надо и его типизировать пример как здесь принимает массив строк и мы не можем здесь передать ничего кроме строк
-for (const skill of skills) {
-    console.log(skill);
-}
-const res = skills.filter((s) => s !== 'DevOps').map(s => s + {}).reduce((a, b) => a + b);
-console.log(res);
+const skill = [1, 'Dev'];
+// Есил стоит readonly то мы не можем изменять тот или иной массив skill[0] = 2; так как мы можем только читать этот массив
+// Если не стоит readonly то мы сможем изменить массив вне зависимости константа она или нет
+const skills = ['Dev', 'DevOps'];
+// Это альтернативная запись для определения массива строк
+const skillsReadonly = ['Dev', 'DevOps'];
+// Это альтернативная запись для определения массива строк с типом readonly
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE
