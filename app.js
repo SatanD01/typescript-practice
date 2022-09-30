@@ -1,8 +1,10 @@
 "use strict";
-function logId(id) {
-    console.log(id);
+function fetchWithAuth(url, method) {
+    return 1;
 }
-logId(1);
-logId('2');
+fetchWithAuth('https://localhost', 'post');
+let a = 'a';
+let method = 'post';
+fetchWithAuth('https://localhost', method);
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE
