@@ -1,19 +1,12 @@
-function getFullName(userEntity: {firstName:string, lastName: string, age: number}): string {
-    return `${userEntity.firstName} ${userEntity.lastName} ${userEntity.age}`
+const skills: string[] = ['Dev', 'DevOps', 'Testing']
+// Когда мы передаем перенной массив надо и его типизировать пример как здесь принимает массив строк и мы не можем здесь передать ничего кроме строк
+
+for (const skill of skills) {
+    console.log(skill);
 }
 
-const user = {
-    firstName: 'Anton',
-    lastName: 'Johan',
-    city: 'Moscow',
-    age: 33,
-    skills: {
-        dev: true,
-        devOps: true,
-    }
-};
+const res = skills.filter((s: string) => s !== 'DevOps').map(s => s + '! ').reduce((a, b) => a + b);
 
-
-console.log(getFullName(user));
+console.log(res)
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE
