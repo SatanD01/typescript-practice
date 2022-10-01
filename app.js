@@ -1,12 +1,13 @@
 "use strict";
-// type httpMethod = 'post' | 'get';
-// type coolString = string;
-// Так же можно определаить одиночные типы и передать в нужное место
 let user = {
     name: 'asd',
-    age: 33,
+    age: 12,
     skills: ['1', '2'],
-    id: 1
+    roleId: 1,
+    createdAt: new Date(),
+    log(id) {
+        return '';
+    }
 };
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE

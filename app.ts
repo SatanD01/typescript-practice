@@ -1,35 +1,47 @@
-// type httpMethod = 'post' | 'get';
-// type coolString = string;
-// Так же можно определаить одиночные типы и передать в нужное место
-
-type User = {
+interface User {
     name: string,
     age: number,
     skills: string[],
-}
-// Так определяется тип объектов когда надо его повторно переиспользовать
 
-type Role = {
+    log: (id: number) => string;
+}
+
+interface Role {
+    roleId: number
+}
+
+interface userWithRole extends User, Role{
+    createdAt: Date;
+}
+
+type User2 = {
     name: string,
-    // Если в обеех обектах есть одни и те же переменные
-    // то надо сделать новый тип объектов с указанием 2 объектов по отдельности
-    id: number
+    age: number,
+    skills: string[],
+
+    log: (id: number) => string;
 }
 
-type UserWithRole = User & Role;
-// Этот type Alias используется для обеденения нескольких типов объектов в один объект
 
-type UserWithRole2 = {
-    user: User,
-    role: Role
-}
-
-let user: UserWithRole = {
+let user: userWithRole = {
     name: 'asd',
-    age: 33,
+    age: 12,
     skills: ['1', '2'],
-    id: 1
+    roleId: 1,
+    createdAt: new Date(),
+    log(id) {
+        return ''
+    }
 }
+
+interface UserDic {
+    [index: number]: User
+}
+
+type UserDic2 = {
+    [index: string]: User
+}
+
 
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE
