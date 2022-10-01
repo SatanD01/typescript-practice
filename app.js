@@ -1,10 +1,12 @@
 "use strict";
-function fetchWithAuth(url, method) {
-    return 1;
-}
-fetchWithAuth('https://localhost', 'post');
-let a = 'a';
-let method = 'post';
-fetchWithAuth('https://localhost', method);
+// type httpMethod = 'post' | 'get';
+// type coolString = string;
+// Так же можно определаить одиночные типы и передать в нужное место
+let user = {
+    name: 'asd',
+    age: 33,
+    skills: ['1', '2'],
+    id: 1
+};
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE
