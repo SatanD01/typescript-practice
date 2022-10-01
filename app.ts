@@ -1,47 +1,27 @@
 interface User {
-    name: string,
-    age: number,
-    skills: string[],
-
-    log: (id: number) => string;
+    name: string
 }
 
-interface Role {
-    roleId: number
+interface User {
+    age: number
 }
+// Интерфайс отличается от Type тем что тут можно до определаить какой либо Интерфей
+// Но им лучше не злоупотреблять. Так можно польщоваться когда не возможно объеденить интерфейсы
+// через Extends USer, User
 
-interface userWithRole extends User, Role{
-    createdAt: Date;
-}
-
-type User2 = {
-    name: string,
-    age: number,
-    skills: string[],
-
-    log: (id: number) => string;
-}
-
-
-let user: userWithRole = {
+const user: User = {
     name: 'asd',
-    age: 12,
-    skills: ['1', '2'],
-    roleId: 1,
-    createdAt: new Date(),
-    log(id) {
-        return ''
-    }
+    age: 23
 }
 
-interface UserDic {
-    [index: number]: User
+
+type Id = string | number;
+
+interface  IDI {
+    ID: string | number
 }
 
-type UserDic2 = {
-    [index: string]: User
-}
-
+// для Обектов лучше использовать Interface а для обычных определений типов лучше использовать type
 
 //tsc - Компиляция ТС на JS
 //node app.js - Запус скрипта в терминале IDE
